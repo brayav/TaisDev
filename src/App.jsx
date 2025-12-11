@@ -162,7 +162,7 @@ const ProjectCarousel = ({ projects }) => {
 const PORTFOLIO_DATA = {
     profile: {
         name: "Tais",
-        handle: "@TaisDev",
+        handle: "@TaisDev.",
         role: "Administradora de Empresas",
         subRole: "Gestión • Anime • Eficiencia",
         avatar: "/profiles.png",
