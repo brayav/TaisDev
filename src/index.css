@@ -1,0 +1,372 @@
+/* Tema Anime - Paleta pastel/neón */
+:root {
+  --bg: #0b0710;
+  --card: #0f1724;
+  --muted: #bfc7d6;
+  --accent-1: #ff6fb5;
+  /* rosa */
+  --accent-2: #7c6cff;
+  /* lila */
+  --accent-3: #7ef6d1;
+  /* aqua */
+  --glass: rgba(255, 255, 255, 0.06);
+  --glass-2: rgba(255, 255, 255, 0.04);
+  --glow: 0 6px 30px rgba(124, 108, 255, 0.18);
+  --radius: 14px;
+  --container-padding: 1.25rem;
+}
+
+/* Tailwind base placeholders kept */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Reset y base */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth
+}
+
+@media (max-width:640px) {
+  html {
+    font-size: 14px
+  }
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: radial-gradient(1200px 600px at 10% 10%, rgba(124, 108, 255, 0.06), transparent 8%),
+    radial-gradient(1000px 500px at 90% 90%, rgba(255, 111, 181, 0.04), transparent 8%),
+    var(--bg);
+  color: #eceff8;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.6;
+  overflow-x: hidden;
+  padding: 2rem;
+}
+
+/* Contenedor centrado */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding-left: var(--container-padding);
+  padding-right: var(--container-padding);
+}
+
+/* Hero */
+.hero {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 1.25rem;
+  align-items: center;
+  margin-bottom: 2.25rem;
+}
+
+@media (max-width: 860px) {
+  .hero {
+    grid-template-columns: 1fr;
+    text-align: center
+  }
+}
+
+/* Avatar placeholder cuadrado (para añadir imagen) */
+.avatar-placeholder {
+  width: 220px;
+  height: 220px;
+  border-radius: 18px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.03), rgba(0, 0, 0, 0.06));
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--glow);
+  transition: transform .45s cubic-bezier(.2, .9, .2, 1), box-shadow .3s;
+}
+
+.avatar-placeholder::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, rgba(255, 111, 181, 0.06), rgba(124, 108, 255, 0.06));
+  mix-blend-mode: overlay;
+  pointer-events: none;
+}
+
+.avatar-placeholder:hover {
+  transform: translateY(-8px) rotate(-1deg) scale(1.03);
+  box-shadow: 0 18px 50px rgba(124, 108, 255, 0.22);
+}
+
+/* Icono + texto en el placeholder */
+.avatar-placeholder .hint {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .5rem;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.avatar-placeholder .hint .plus {
+  width: 70px;
+  height: 70px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, var(--accent-1), var(--accent-2));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  color: white;
+  box-shadow: 0 8px 30px rgba(255, 111, 181, 0.18)
+}
+
+/* Nombre y subtítulo */
+.hero .meta h1 {
+  font-size: 1.9rem;
+  margin-bottom: .25rem;
+  letter-spacing: -0.5px;
+  color: linear-gradient(90deg, var(--accent-1), var(--accent-2));
+}
+
+.hero .meta p {
+  color: var(--muted);
+  margin-bottom: 1rem;
+}
+
+/* Tags estilo pin */
+.tag-row {
+  display: flex;
+  gap: .5rem;
+  flex-wrap: wrap
+}
+
+.tag {
+  background: linear-gradient(90deg, rgba(255, 111, 181, 0.08), rgba(124, 108, 255, 0.04));
+  color: var(--muted);
+  padding: .45rem .6rem;
+  border-radius: 999px;
+  font-size: .85rem;
+  border: 1px solid rgba(255, 255, 255, 0.03)
+}
+
+/* About card */
+.card {
+  background: linear-gradient(180deg, var(--glass), var(--glass-2));
+  border-radius: var(--radius);
+  padding: 1.2rem;
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  box-shadow: 0 8px 30px rgba(2, 6, 23, 0.6);
+}
+
+/* Texto de descripción (específico que pediste) */
+.about-text {
+  color: #e9edf8;
+  font-size: 1rem;
+}
+
+.about-text strong {
+  color: var(--accent-1)
+}
+
+/* Projects grid - placeholders cuadrados */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-top: 1.25rem;
+}
+
+@media (max-width:980px) {
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr)
+  }
+}
+
+@media (max-width:520px) {
+  .projects-grid {
+    grid-template-columns: 1fr
+  }
+}
+
+/* Project card (imagen cuadrada) */
+.project-card {
+  aspect-ratio: 1 / 1;
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+  background: linear-gradient(135deg, rgba(124, 108, 255, 0.06), rgba(255, 111, 181, 0.04));
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  transition: transform .35s cubic-bezier(.2, .9, .2, 1), box-shadow .35s;
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6)
+}
+
+/* Placeholder center label */
+.project-card .placeholder-label {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--muted);
+  font-weight: 600;
+  letter-spacing: 0.6px;
+  font-size: 14px;
+}
+
+/* Mini badges for projects */
+.project-card .badge {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  background: rgba(0, 0, 0, 0.35);
+  padding: .28rem .5rem;
+  border-radius: 999px;
+  font-size: .75rem;
+  color: var(--muted);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.03)
+}
+
+/* Floating sakura / sparkles decorative layer */
+.sparkles {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  mix-blend-mode: screen;
+}
+
+.sparkles svg {
+  width: 100%;
+  height: 100%;
+  opacity: .16
+}
+
+/* Fancy neon underline for headings */
+.neon-underline {
+  display: inline-block;
+  position: relative;
+}
+
+.neon-underline::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -6px;
+  height: 6px;
+  background: linear-gradient(90deg, var(--accent-1), var(--accent-2), var(--accent-3));
+  filter: blur(8px);
+  border-radius: 999px;
+  opacity: .9;
+  transform: scaleX(.95);
+}
+
+/* Animations */
+@keyframes floaty {
+  0% {
+    transform: translateY(0)
+  }
+
+  50% {
+    transform: translateY(-8px)
+  }
+
+  100% {
+    transform: translateY(0)
+  }
+}
+
+@keyframes drift-left {
+  0% {
+    transform: translateX(0) rotate(0deg);
+    opacity: .9
+  }
+
+  100% {
+    transform: translateX(-40px) rotate(8deg);
+    opacity: .2
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0
+  }
+
+  100% {
+    background-position: 200% 0
+  }
+}
+
+/* Subtle float on avatar and project placeholders */
+.avatar-placeholder,
+.project-card {
+  animation: floaty 6s ease-in-out infinite
+}
+
+/* Shimmer effect for loading-like placeholders */
+.shimmer {
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.02));
+  background-size: 200% 100%;
+  animation: shimmer 3.2s linear infinite;
+}
+
+/* Focus and accessibility */
+a:focus,
+button:focus,
+.avatar-placeholder:focus {
+  outline: 2px solid rgba(124, 108, 255, 0.22);
+  outline-offset: 3px
+}
+
+/* Small utilities */
+.flex {
+  display: flex
+}
+
+.center {
+  align-items: center;
+  justify-content: center
+}
+
+.stack {
+  display: flex;
+  flex-direction: column;
+  gap: .6rem
+}
+
+/* Footer */
+.footer {
+  margin-top: 2.25rem;
+  color: var(--muted);
+  font-size: .9rem;
+  text-align: center
+}
+
+/* Scrollbar theme */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px
+}
+
+::-webkit-scrollbar-track {
+  background: transparent
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 999px
+}
