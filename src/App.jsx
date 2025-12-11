@@ -162,10 +162,10 @@ const ProjectCarousel = ({ projects }) => {
 const PORTFOLIO_DATA = {
     profile: {
         name: "Tais",
-        handle: "@TaisDev.",
+        handle: "@TaisDev",
         role: "Administradora de Empresas",
         subRole: "Gestión • Anime • Eficiencia",
-        avatar: "/profiles.png",
+        avatar: "/TaisDev/profiles.png",
         bio: "¡Konnichiwa! Soy Tais, una profesional apasionada por la gestión empresarial y la cultura japonesa. Como administradora, me especializo en optimizar procesos y liderar equipos con metodologías ágiles inspiradas en la disciplina samurái. Mi enfoque combina análisis de datos con creatividad estratégica, buscando siempre la mejora continua y resultados tangibles. En mi tiempo libre, disfruto del anime, cuido de mis dos gatos (Mochi y Sushi), y exploro nuevas formas de fusionar la eficiencia empresarial con la estética y filosofía oriental.",
         vision: "Mi visión es transformar organizaciones mediante estrategias innovadoras que equilibren productividad y bienestar, creando ambientes de trabajo donde cada miembro pueda desarrollar su máximo potencial mientras disfruta del proceso.",
         cvLink: "#"
